@@ -1,0 +1,75 @@
+<script src="<BaseLoja>htm/js/autosuggestTbar.js"></script>
+<!-- Begin: Toolbar -->
+<div class="FCToolBar HideXs">
+  <div class="row">
+    <div class="MainContainer">
+      
+          <!-- Begin Topo-->
+<div class="TopoTotalFixo">
+          <!-- Begin Logo -->
+        <div class="LogoTopoFixo">
+            <a href="<StoreDomain>"><img alt="<NomeLoja>" src="<BaseLoja>images/LogoRaquelOtero.png"></a>
+        </div>
+          <!-- End Logo -->
+          <!--Inicio Menu Topo-->
+          <nav class="MenuTopoFixo">
+
+                    <!-- Begin Menu -->
+                  <div class="HeaderMainMenu">
+                    <div class="row">
+                      <div class="MainContainer">
+                        <div class="col-small-12 col-medium-12 col-large-12 col-mlarge-12 col-xlarge-12">
+                              <div class="HeaderMenuDropdown">
+                                      <ul id="mega-menu-tut" class="menu">
+                                        <li><a href="/listaprodutos.asp?idloja=32039&fil=3855&produtos=30&avancada=true&tfil=Passeio+Conforto">Passeio e Conforto</a></li>
+                                        <li><a href="/listaprodutos.asp?idloja=32039&fil=3852&produtos=30&avancada=true&tfil=Alimentar">Alimentar</a></li>
+                                        <li><a href="/listaprodutos.asp?idloja=32039&fil=3854&produtos=30&avancada=true&tfil=Banho">Banho</a></li>
+                                        <li><a href="/listaprodutos.asp?idloja=32039&fil=3853&produtos=30&avancada=true&tfil=Brincar">Brincar</a></li>
+                                        <li><a href="/listaprodutos.asp?idloja=32039&fil=3893&produtos=30&avancada=true&tfil=Super+Util">Super Úteis</a></li>
+                                        <li><a href="/listaprodutos.asp?idloja=32039&fil=6717&avancada=true&tfil=Natal">Natal</a></li>
+                                        <li class="LastMenuTopo"><a href="/listaprodutos.asp?idloja=32039&fil=4367&produtos=30&avancada=true&tfil=Preferidos">
+                                        <img class="CoracaoMenu" src="<BaseLoja>images/CoracaoMenu.png">Preferidos</a></li>
+                                      </ul>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Menu -->
+
+          </nav>
+
+
+          <!-- Begin Search -->
+          <div class="BuscaTopo">
+                    <form name="TopSearchForm" method="GET" class="HeaderSearchForm" id="autocomplete-form" action="/ListaProdutos.asp?IDLoja=<IDLoja>">
+
+                        <input type="hidden" value="<IDLoja>" name="IDLoja">
+                        <input type="hidden" value="True" name="Digitada">
+                        <input type="text" id="autocomplete" value="<SearchText>" name="Texto" class="HeaderSearchField" placeholder="O QUE VOCÊ PROCURA ?" required>
+                        <input type="image" src="<BaseLoja>images/LupaTopo.png" class="HeaderTopSearchSubmit">
+
+                    </form>
+          </div>
+          <!-- End Search -->
+
+
+          <!-- Inicio Icones Topo -->
+          <div class="IconesTopoFixo">
+              <ul>
+                  <li>
+                    <div class="CarrinhoTopoFixo"><a href="/addProduto.asp?idloja=<BaseLoja>" class="QuantidadeCarrinho"><QtdCesta></a></div>      
+                  </li>
+              </ul>
+          </div>
+          <!-- Fim Icones Topo -->
+</div>
+<!-- End Topo-->
+
+
+
+    </div>
+  </div>
+</div>
+<script>var w=jQuery(window).width();w>1024&&ToolbarCartExec();</script>
+<!-- End: Toolbar -->
