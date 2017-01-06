@@ -1,0 +1,60 @@
+/** Alterado por Osvaldo as 21h22 dia 29/09/2016
+ *  This element is created inside your target element
+ *  It is used so that your own element will not need to be altered
+ **/
+.time_circles {
+    position: relative;
+    width: 58%;
+    height: 100%;
+    float: right;
+}
+.time_circles canvas{width: 100% !important;height: 100%;display: block;left: 0;position: absolute;}
+/**
+ *  This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {position: relative;text-align: center;display: block;top: 1vw !important;left: initial !important;right: initial;float: left;width: 5vw !important;}
+
+.textDiv_Days {color:#fff;margin: 0;}
+
+.textDiv_Hours {color:#fff;margin: 0;}
+
+.textDiv_Minutes {color:#fff;margin: 0;}
+
+.textDiv_Seconds {width: 72px !important;color:#fff;margin: 0;display: none !important;}
+
+/**
+ *  Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+    margin: 0 0;
+    padding: 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', Arial;
+    font-size: .9vw !important;
+    line-height: normal !important;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+/**
+ *  Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Century Gothic', Arial;
+    font-size: 15px !important;
+    padding: .5vw;
+    font-weight: bold;
+    float: left;
+}
+
+
+div#DateCountdown1, div#DateCountdown2, div#DateCountdown3 {z-index: 99999999;width: 100%;height: auto;position: absolute;top: 0;left: 0;}
+
+div#DateCountdown2 {}
+div#DateCountdown3 {}
