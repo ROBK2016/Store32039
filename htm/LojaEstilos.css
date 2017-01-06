@@ -1,0 +1,13 @@
+/* Estilos personalizados */
+#TabBancos,.EstContinuarComprando,.EstPassoCompraDiv{display:none}
+
+/* Header */
+.HeaderPedLogo{margin:50px 0px 0px 0px;}
+.HeaderPedBackground{background-color:<tag-FCCSSMainColor>;width:100%;height:5px;}
+
+/* Footer */
+.FooterTecBoxFC{background-color:<tag-FCCSSColor7>;width:100%;height:50px;margin:50px 0px 0px 0px}
+.FooterTecBoxFC p{margin:16px 0px 0px 0px}
+.FooterPedCompany{margin:20px 0px 0px 0px}
+.FooterPedCompany p{font-family:'Roboto',verdana,arial !important;font-weight:300 !important;}
+.FooterPedAddFastCommerceData{font-family:'Roboto',verdana,arial !important;font-weight:300 !important;font-size:0.85em;}
