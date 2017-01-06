@@ -1,0 +1,242 @@
+<!-- Fastcommerce - EstiloProduto9.htm (Fast Preview Modelo) -->
+
+<ProdTop>
+<base target="_parent">
+
+<script src="<BaseLoja>htm/LojaLib.js"></script>
+<script src="<BaseLoja>htm/JurosParcelas.js"></script>
+<link rel="stylesheet" href="/wave/V2/waveMin.css">
+<IncludeTagged src="htm/LojaSite.css" async>
+<link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" />
+<script type="text/javascript" src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js"></script>
+<script>
+function LinkDisp(Estoque,IDProduto){
+ if(Estoque==0){
+    document.write("<a href='javascript:MostraDisp("+ FC$.IDLoja +","+ IDProduto +")' title='Clique aqui para ser avisado quando este produto estiver disponível'>Avise-me quando estiver disponível</a>");
+ }
+}
+
+function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){
+  var oPos=getPos(este);
+  if(oDivShowCartOnPage==null){
+    var oNewElement=document.createElement("div");
+    oNewElement.setAttribute("id","DivShowCartOnPage"); 
+    oDivShowCartOnPage=document.body.appendChild(oNewElement);
+  }
+
+  oDivShowCartOnPage.style.backgroundColor="#fcfcfc";
+  oDivShowCartOnPage.style.borderColor="#cdcdcd";
+  oDivShowCartOnPage.style.color="#555555";
+  oDivShowCartOnPage.style.border="1px solid #cdcdcd";
+  oDivShowCartOnPage.style.marginTop="-95px";
+  oDivShowCartOnPage.style.marginLeft="0px";
+  oDivShowCartOnPage.style.position="absolute";
+  oDivShowCartOnPage.style.zIndex="1";
+  oDivShowCartOnPage.style.visibility="visible";
+
+  var iW=230;
+  var iH=100;
+
+  if(iErr==0)sBackColor="3187e6"; else sBackColor="949494";
+  var sHTML="<table id=idTabShowCartOnPageFC width='"+iW +"' height='"+ iH +"' cellpadding=3 cellspacing=3>";
+     sHTML+="<tr onclick=window.parent.location.href='addproduto.asp?idloja="+ IDLoja +"' ><td id=idTDTitShowCartOnPageFC colspan=2 align=center style='background-color:#"+ sBackColor +";color:#ffffff;border-width:1px;border-color:#3b6e22;font-weight:bold;font-size:12px;cursor:pointer;'><div style='padding:25px 0px 0px 0px;'>"+ sMsg +"</div></td></tr>";
+     if(iErr==0){
+       sHTML+="<tr height=45>";
+       sHTML+="<td valign=top align=center style=cursor:pointer onclick=window.location.href='/addproduto.asp?idloja="+ IDLoja +"'><a href='addproduto.asp?idloja="+ IDLoja +"' style='color:#444444;text-decoration:none;font-size:14px;font-weight:bold;'>Ir para o carrinho</a></td>";
+       sHTML+="<td align=left><img src='"+ FC$.PathImg +"IconClose.svg' width=20 height=20 hspace=5 style='cursor:pointer;margin-top:10px' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
+       sHTML+="</tr>";
+       sF$.fnUpdateCart(true,true);
+     }
+     else{
+       sHTML+="<tr height=20>";
+       sHTML+="<td colspan=2 align=center><img hspace=5 src='"+ FC$.PathImg +"IconClose.svg' width=20 height=20 style='cursor:pointer' onclick=oDivShowCartOnPage.style.visibility='hidden'></td>";
+       sHTML+="</tr>";
+     }
+     sHTML+="</table>";
+  oDivShowCartOnPage.style.top=oPos.y+"px";
+  oDivShowCartOnPage.style.left=oPos.x+"px";
+  oDivShowCartOnPage.innerHTML=sHTML;
+  iLastCartOnPage++;
+  setTimeout("if(iLastCartOnPage=="+ iLastCartOnPage +")oDivShowCartOnPage.style.visibility='hidden';",4000);
+
+}
+</script>
+<style>body{background:#ffffff;}</style>
+</ProdTop>
+
+<ProdLista><!-- Prod Lista --></ProdLista>
+
+<ProdDet>
+<link href="<BaseLoja>htm/css/FC_Grid_v1.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" />
+
+<!-- Begin: Release Button -->
+<div class="row">
+  <div class="MainContainerx">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-right">
+      <br>
+      <div class="DivDetBtnRelease"><lancamento></div>
+        <script>if(<OpiniaoQtd>>0){document.write("<div class='RateProd'><table><tr><td><OpiniaoMedia></td><td></td></tr></table></div>");}else{document.write("<div class='RateProd'><table><tbody><tr><td><table cellspacing='0' cellpadding='0'><tbody><tr><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td><td class='NotaOpiniaoVazio'></td></tr></tbody></table></td><td></td></tr></tbody></table></div>");}</script>
+    </div>
+  </div>
+</div>
+<!-- End: Release Button -->
+
+<!-- Begin: Product Name -->
+<div class="row">
+  <div class="MainContainer">
+    <div class="col-small-9 col-medium-9 col-large-9 col-xlarge-9 text-left">
+      <h1 id="idNameProductGridFC"><NomeProd></h1>
+    </div>
+  </div>
+</div>
+<!-- End: Product Name -->
+
+<div class="row">
+  <div class="MainContainerx">
+  <!--Begin: Imagem Zoom -->
+  <div class="col-small-7 col-medium-7 col-large-7 col-xlarge-7" id="idDivGridImg">
+    <a href="<ImagemProdAmp>" class="MagicZoomPlus" rel="hint:false;initialize-on: mouseover;"><img src="<ImagemProdDet>" alt="<NomeProd>" onError="MostraImgOnError(this,0)"></a>
+  </div>
+  <!--End: Imagem Zoom -->
+  <div class="col-small-5 col-medium-5 col-large-5 col-xlarge-5 text-left">
+    <!-- Begin: Release - Product Name - Cod - Reviews -->
+    <div class="ProductStyleBoxFC">
+      <div class="DivDetRef"><span class="prod-info">Ref: <small id="idCodProdGrid"><CodProd></small></div>
+      <div class="prod-info DivDetCat">Categoria: <NomeCat></div>
+      <!-- Begin: Price Grid -->
+      <div class="ProductStyleBoxBGFC ProductStyleDetprice">
+        <p class="prod-price" id="idPriceGridFC">
+          <PrecoSimples>     
+        </p>
+        <script>(function(){ var e=document.getElementById("idPriceGridFC"); if(e)e.innerHTML += fnMaxInstallmentsGrid(<PrecoNum>,<MaxParcelasProdNum>) + fnShowEconomyGrid(<PrecoNum>,<PrecoOri>); })(); </script>
+        <p id="idPriceAVista"><script>sF$.fnMostraDescontoProdDet(<PrecoNum>);</script></p>
+      </div>
+      <!-- End: Price Grid -->
+      <!-- Begin: Grid Content -->
+      <div class="FCGridMain" id="idMainGridFC_<IDProduto>"></div>
+      <!-- End: Grid Content -->
+      <hr>
+      <!-- Begin: ZipCode -->
+      <div id="ShowCEP<IDProduto>"></div>
+      <!-- End: ZipCode -->
+    </div>
+    <!-- End: Release - Product Name - Cod - Reviews -->
+  </div>
+  </div>
+</div>
+
+<div class="FullDoubleSpaceFC"></div>
+
+<!-- Begin: Description -->
+<div class="row">
+  <div class="MainContainerx">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 col-full-12 text-center">
+      <h2 class="GlobalTitleSepBG GlobalTitleSepDoubleLine"><span class="GlobalTitleSizeSep">DESCRIÇÃO</span></h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="MainContainerx">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+        <div class="ProductStyleBoxDescriptionFC">
+         <Descricao>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <DescrHTM>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <DescrURL>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <VideoProd>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <BarCode>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- End: Description -->
+
+<!-- Javascript ZipCode - Description CrossSelling -->
+<script>
+FCLib$.onReady(sF$.fnCustomizeIconsSocialNetworks(true));
+
+jQuery(".EstNameProdCross").addClass('text-overflow');
+</script>
+
+<!-- Begin: JS scripts grid -->
+<script src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js"></script>
+<script src="<BaseLoja>htm/js/FC_Grid_v1.js"></script>
+
+<script>
+fnShowCEPGrid(<IDProduto>); /*FC simulação de frete */
+FCGrid$.fnMultipleZoom("<ImagemProdDet>","<ImagemProdAmp>", false);
+</script>
+
+<script>
+var aProductOnlyOneGrid=[], aProductListGrid=[];
+
+/* Begin: produto principal */
+var sCor= ("<CorVal>" !="") ? "<CorVal>|<CorRGB>":"";
+aProductOnlyOneGrid.push(JSON.stringify({IDProduto: <IDProduto>,codProd: "<CodProd>", cor: sCor, estoque: <Estoque>, peso: "<PesoNum>", priceOri: "<PrecoOri>", priceNum: "<PrecoNum>", maxInstallmentsNum: <MaxParcelasProdNum>, adicional1: "<Adicional1Val>", adicional2: "<Adicional2Val>", adicional3: "<Adicional3Val>", adicionalD1: "<AdicionalD1Val>", adicionalD2:"<AdicionalD2Val>", adicionalD3:"<AdicionalD3Val>", imgDet:"<ImagemProdDet>", imgAmp:"<ImagemProdAmp>"}));
+/* End: produto principal */
+
+/* Begin: lista subprodutos */
+<sub>
+var sCor= ("<CorVal>" !="") ? "<CorVal>|<CorRGB>":"";
+aProductListGrid.push(JSON.stringify({IDProduto: <IDProduto>, codProd: "<CodProd>", cor: sCor, estoque: <Estoque>, peso: "<PesoNum>", priceOri: "<PrecoOri>", priceNum: "<PrecoNum>", maxInstallmentsNum: <MaxParcelasProdNum>, adicional1: "<Adicional1Val>", adicional2: "<Adicional2Val>", adicional3: "<Adicional3Val>", adicionalD1: "<AdicionalD1Val>", adicionalD2:"<AdicionalD2Val>", adicionalD3:"<AdicionalD3Val>", imgDet:"<ImagemProdDet>", imgAmp:"<ImagemProdAmp>"}));
+</sub>
+/* Begin: lista subprodutos */
+
+/* código opcional para alterar as configurações da grade:begin */
+FCGrid$.myOptions = {
+  autoSelect : false,
+  cartOnPage : true,
+  shippingUpdate : false,
+  incMultGrid : false,
+  separadorRGBCor : '|',
+  qtyDescriptors : 7,
+  htmlFlagChecked : '<i class="FCCheckedGrid"></i>',
+  imageProduct : 'cor',
+  colorName : false,
+  colorImg : false, 
+  colorImgFormat : '.gif',
+  stock: false,
+  btnSelectImg : 'BotSelecioneGrid.svg', 
+  btnBuyImg : 'BotCarrinho.svg',
+  btnContactUSImg : 'BotConsulteGrid.svg',
+  btnSoldOut : 'BotCarrinhoEsgotado.svg', 
+  textGrid : 'Selecione as opções abaixo',
+  order : ['cor', 'adicional1', 'adicional2', 'adicional3', 'adicionalD1', 'adicionalD2', 'adicionalD3'],
+  nameDescriptor : { 
+    cor : 'Cor',
+    adicional1 : 'Descritor 1',
+    adicional2 : 'Descritor 2',
+    adicional3 : 'Descritor 3',
+    adicionalD1 : 'Descritor 4',
+    adicionalD2 : 'Descritor 5',
+    adicionalD3 : 'Descritor 6'
+  },
+  textDescriptor : {
+    cor : 'Selecione',
+    adicional1 : 'Selecione',
+    adicional2 : 'Selecione',
+    adicional3 : 'Selecione',
+    adicionalD1 : 'Selecione',
+    adicionalD2 : 'Selecione',
+    adicionalD3 : 'Selecione'
+  }
+};
+/* código opcional para alterar as configurações da grade:end */
+
+FCGrid$.init("idMainGridFC_<IDProduto>", aProductListGrid, aProductOnlyOneGrid); /* Inicia a grade */
+
+</script>
+<!-- End: JS scripts grid -->
+</ProdDet>
+
+<ProdAmp><!-- Prod Amp --></ProdAmp>
+
+<ProdBottom></ProdBottom>
